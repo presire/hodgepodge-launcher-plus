@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+set -eEu
+. "$( dirname "$0" )/.plasmoid"
+
+
+main()
+{
+    check-gettext-command 'msgfmt'
+
+    local -A modata=()
+    store-metadata-in 'modata'
+
+    hint 0 "Compiling translations..." $LINENO
+
+    cd "${modata['poPath']}" || panic 0 "Could not enter '${modata['poPath']}'" $LINENO
+
+    local localePath
+    localePath="${modata['plasmoidRoot']}/contents/locale"
+    for poFile in $( find . -name '*.po' | sort ); do
+        local locale
+        locale="$( basename "${poFile%.*}" )"
+
+        msgfmt --output-file="${locale}.mo" "$poFile"
+
+        # https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems#Declarative_plasmoids
+        moFile="$localePath/$locale/LC_MESSAGES/plasma_applet_${modata['id']}.mo"
+        mkdir -p "$(dirname "$moFile")"
+        mv "$locale.mo" "${moFile}"
+    done
+
+    confirm 0 '...done compiling translations.' $LINENO
+}
+
+main

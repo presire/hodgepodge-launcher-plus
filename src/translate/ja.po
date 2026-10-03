@@ -1,0 +1,480 @@
+# ja translation of Hodgepodge Launcher Plus (thege.hodgepodge.launcher)
+# Copyright (C) 2025 Gabriel Tenita <g1704578400@tenita.eu>
+# This file is distributed under the same license as the thege.hodgepodge.launcher package.
+# Gabriel Tenita <g1704578400@tenita.eu>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: thege.hodgepodge.launcher\n"
+"Report-Msgid-Bugs-To: https://github.com/presire/hodgepodge-launcher-plus/issues\n"
+"POT-Creation-Date: 2026-10-03 19:04+0900\n"
+"PO-Revision-Date: 2026-10-03 19:20+0900\n"
+"Last-Translator: Presire <presire2@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../src/contents/config/config.qml:17
+#, kde-format
+msgid "Behavior"
+msgstr "動作"
+
+#: ../src/contents/config/config.qml:23
+#, kde-format
+msgid "Appearance"
+msgstr "外観"
+
+#: ../src/contents/ui/Config/KCMAbout.qml:36
+#, kde-format
+msgid "Report a Bug…"
+msgstr "バグを報告…"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:48
+#, kde-format
+msgid "Sidebar position:"
+msgstr "サイドバーの位置："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:51
+#, kde-format
+msgid "Left"
+msgstr "左"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:56
+#, kde-format
+msgid "Right"
+msgstr "右"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:63
+#, kde-format
+msgid "List style:"
+msgstr "リストスタイル："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:66
+#, kde-format
+msgid "Normal"
+msgstr "通常"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:73
+#, kde-format
+msgid "Compact"
+msgstr "コンパクト"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:79
+#, kde-format
+msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
+msgid "Disabled in Touch Mode"
+msgstr "タッチモードでは無効です"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:85
+#, kde-format
+msgctxt "@info:isListCompact"
+msgid "Normal: two rows, compact: one row."
+msgstr "通常：2行、コンパクト：1行"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:93
+#, kde-format
+msgid "Launcher icon:"
+msgstr "ランチャーアイコン："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:98
+#, kde-format
+msgctxt "@action:button"
+msgid "Change Application Launcher's icon"
+msgstr "アプリケーションランチャーのアイコンを変更"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:99
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Current icon is %1. Click to open menu to change the current icon or reset to the default icon."
+msgstr "現在のアイコンは %1 です。クリックしてメニューを開き、現在のアイコンを変更するか、デフォルトのアイコンにリセットします"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:102
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Icon name is \"%1\""
+msgstr "アイコン名は「%1」です"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:135
+#, kde-format
+msgctxt "@item:inmenu Open icon chooser dialog"
+msgid "Choose…"
+msgstr "選択…"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:137
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Choose an icon for Application Launcher"
+msgstr "アプリケーションランチャーのアイコンを選択"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:141
+#, kde-format
+msgctxt "@item:inmenu Reset icon to default"
+msgid "Reset to default icon"
+msgstr "デフォルトのアイコンにリセット"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:147
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Remove icon"
+msgstr "アイコンを削除"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:160
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Launcher icon text:"
+msgstr "ランチャーアイコンのテキスト："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:162
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Type here to add a text label next to the launcher icon…"
+msgstr "ここに入力すると、ランチャーアイコンの横にテキストラベルを追加できます…"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:175
+#, kde-format
+msgctxt "@action:button"
+msgid "Remove launcher icon text"
+msgstr "ランチャーアイコンのテキストを削除"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:188
+#, kde-format
+msgctxt "@info"
+msgid "An icon text cannot be set when the launcher's container is vertical."
+msgstr "ランチャーのコンテナが垂直の場合、アイコンテキストは設定できません"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:198
+#, kde-format
+msgid "User avatar size:"
+msgstr "ユーザーアバターのサイズ："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:204
+#: ../src/contents/ui/Config/KCMAppearance.qml:215
+#: ../src/contents/ui/Config/KCMAppearance.qml:226
+#: ../src/contents/ui/Config/KCMAppearance.qml:319
+#, kde-format
+msgid "px"
+msgstr "px"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:209
+#, kde-format
+msgid "Grid icons size:"
+msgstr "グリッドアイコンのサイズ："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:220
+#, kde-format
+msgid "List icons size:"
+msgstr "リストアイコンのサイズ："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:231
+#, kde-format
+msgctxt "@info:userIconSize"
+msgid "The size of the user avatar located in the launcher header."
+msgstr "ランチャーのヘッダーにあるユーザーアバターのサイズ"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:239
+#, kde-format
+msgid "Favorites layout:"
+msgstr "お気に入りのレイアウト："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:242
+#: ../src/contents/ui/Config/KCMAppearance.qml:258
+#, kde-format
+msgid "Grid"
+msgstr "グリッド"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:248
+#: ../src/contents/ui/Config/KCMAppearance.qml:264
+#, kde-format
+msgid "List"
+msgstr "リスト"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:255
+#, kde-format
+msgid "Applications layout:"
+msgstr "アプリケーションのレイアウト："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:271
+#, kde-format
+msgid "Show comments below icons in:"
+msgstr "アイコンの下にコメントを表示："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:275
+#, kde-format
+msgid "None"
+msgstr "なし"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:276
+#: ../src/contents/ui/Config/KCMBehavior.qml:87
+#, kde-format
+msgid "Favorites"
+msgstr "お気に入り"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:277
+#: ../src/contents/ui/Page/PageFooter.qml:118
+#, kde-format
+msgid "Applications"
+msgstr "アプリケーション"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:278
+#, kde-format
+msgid "Favorites and applications"
+msgstr "お気に入りとアプリケーション"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:283
+#, kde-format
+msgctxt "@info:gridCommentVisibility"
+msgid "Comments are shown only in layouts set to Grid."
+msgstr "コメントは、レイアウトがグリッドの場合のみ表示されます"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:287
+#, kde-format
+msgid "Comment lines:"
+msgstr "コメントの行数："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:291
+#, kde-format
+msgid "One line"
+msgstr "1行"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:292
+#, kde-format
+msgid "Two lines"
+msgstr "2行"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:297
+#, kde-format
+msgctxt "@info:gridCommentLines"
+msgid "Grid cells are square, so two lines also make them wider and fewer icons fit in a row."
+msgstr "グリッドのマス目は正方形のため、2行にすると幅も広がり、1行に並ぶアイコンの数が減ります"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:305
+#, kde-format
+msgid "Separator lines:"
+msgstr "区切り線："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:309
+#, kde-format
+msgid "Width:"
+msgstr "幅："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:324
+#, kde-format
+msgid "Color:"
+msgstr "色："
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:328
+#, kde-format
+msgid "Separator lines color"
+msgstr "区切り線の色"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:46
+#, kde-format
+msgid "Always sort applications alphabetically"
+msgstr "アプリケーションを常にアルファベット順に並べ替える"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:52
+#, kde-format
+msgid "Highlight new apps"
+msgstr "新しいアプリを強調表示"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:58
+#, kde-format
+msgid "Update main panel when hovering over sidebar categories"
+msgstr "サイドバーのカテゴリにカーソルを合わせたときにメインパネルを更新する"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:63
+#, kde-format
+msgctxt "@info:isUpdateOnHover"
+msgid "If unchecked, the apps in the main panel will be updated when clicking (instead of hovering) on a sidebar category."
+msgstr "チェックを外すと、メインパネルのアプリは、サイドバーのカテゴリにカーソルを合わせたときではなく、クリックしたときに更新されます"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:73
+#, kde-format
+msgctxt "@action:button opens plasmasearch kcm"
+msgid "Configure Search Plugins…"
+msgstr "検索プラグインの設定…"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:82
+#, kde-format
+msgid "Open launcher in:"
+msgstr "ランチャーの初期表示："
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:89
+#, kde-format
+msgid "All Applications"
+msgstr "すべてのアプリケーション"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:91
+#: ../src/contents/ui/Page/PageFooter.qml:125
+#, kde-format
+msgid "Places"
+msgstr "場所"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:99
+#, kde-format
+msgctxt "@info:startWith"
+msgid "Select what is first visible when the launcher is opened."
+msgstr "ランチャーを開いたときに最初に表示するものを選択します"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:103
+#, kde-format
+msgid "Show applications as:"
+msgstr "アプリケーションの表示形式："
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:106
+#, kde-format
+msgid "Name only"
+msgstr "名前のみ"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:107
+#, kde-format
+msgid "Description only"
+msgstr "説明のみ"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:108
+#, kde-format
+msgid "Name and description"
+msgstr "名前と説明"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:109
+#, kde-format
+msgid "Description and name"
+msgstr "説明と名前"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:118
+#, kde-format
+msgid "Show buttons for:"
+msgstr "表示するボタン："
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:121
+#, kde-format
+msgid "Power actions"
+msgstr "電源操作"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:126
+#, kde-format
+msgid "Session actions"
+msgstr "セッション操作"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:132
+#, kde-format
+msgctxt "@info:isPowerVisible,isSessionVisible"
+msgid "If unchecked or not enough space, buttons will move to the 'Power/Session' menu."
+msgstr "チェックを外すか、スペースが足りない場合、ボタンは「電源/セッション」メニューに移動します"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:137
+#, kde-format
+msgid "Show button captions in the Power/Session toolbar"
+msgstr "電源/セッションツールバーにボタンのキャプションを表示する"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:147
+#, kde-format
+msgid "Reset configuration"
+msgstr "設定をリセット"
+
+#: ../src/contents/ui/Config/KCMBehavior.qml:161
+#, kde-format
+msgid "Clicking 'OK' will reset the launcher settings."
+msgstr "「OK」をクリックすると、ランチャーの設定がリセットされます"
+
+#: ../src/contents/ui/Config/KCMShortcuts.qml:21
+#, kde-format
+msgid "Shortcuts"
+msgstr "ショートカット"
+
+#: ../src/contents/ui/Config/KCMShortcuts.qml:33
+#, kde-format
+msgid "This shortcut will activate the applet as though it had been clicked."
+msgstr "このショートカットは、クリックしたときと同じようにアプレットを起動します"
+
+#: ../src/contents/ui/FullRepresentationHeader.qml:86
+#, kde-format
+msgid "Open user settings"
+msgstr "ユーザー設定を開く"
+
+#: ../src/contents/ui/FullRepresentationHeader.qml:275
+#, kde-format
+msgid "Keep Open"
+msgstr "開いたままにする"
+
+#: ../src/contents/ui/FullRepresentation.qml:160
+#, kde-format
+msgctxt "@info:status"
+msgid "No matches"
+msgstr "一致する項目はありません"
+
+#: ../src/contents/ui/Helper/Tools.js:33
+#, kde-format
+msgid "Remove from Favorites"
+msgstr "お気に入りから削除"
+
+#: ../src/contents/ui/Helper/Tools.js:37
+#, kde-format
+msgid "Add to Favorites"
+msgstr "お気に入りに追加"
+
+#: ../src/contents/ui/Helper/Tools.js:62
+#, kde-format
+msgid "On All Activities"
+msgstr "すべてのアクティビティ"
+
+#: ../src/contents/ui/Helper/Tools.js:112
+#, kde-format
+msgid "On the Current Activity"
+msgstr "現在のアクティビティ"
+
+#: ../src/contents/ui/Helper/Tools.js:126
+#, kde-format
+msgid "Show in Favorites"
+msgstr "お気に入りに表示"
+
+#: ../src/contents/ui/main.qml:381
+#, kde-format
+msgid "Edit Applications…"
+msgstr "アプリケーションを編集…"
+
+#: ../src/contents/ui/Page/PageFooterLeaveButtons.qml:181
+#, kde-format
+msgid "Power/Session"
+msgstr "電源/セッション"
+
+#: ../src/contents/ui/Page/PageFooterLeaveButtons.qml:182
+#, kde-format
+msgid "Session"
+msgstr "セッション"
+
+#: ../src/contents/ui/Page/PageFooterLeaveButtons.qml:183
+#, kde-format
+msgid "Power"
+msgstr "電源"
+
+#: ../src/contents/ui/Page/PageFooterLeaveButtons.qml:184
+#, kde-format
+msgid "More"
+msgstr "その他"
+
+#: ../src/contents/ui/Page/PlacesPage.qml:68
+#, kde-format
+msgctxt "category in Places sidebar"
+msgid "Computer"
+msgstr "コンピューター"
+
+#: ../src/contents/ui/Page/PlacesPage.qml:69
+#, kde-format
+msgctxt "category in Places sidebar"
+msgid "History"
+msgstr "履歴"
+
+#: ../src/contents/ui/Page/PlacesPage.qml:70
+#, kde-format
+msgctxt "category in Places sidebar"
+msgid "Frequently Used"
+msgstr "よく使用するもの"
+
+#: ../src/contents/ui/View/KickoffGridView.qml:100
+#, kde-format
+msgid "Grid with %1 rows, %2 columns"
+msgstr "%1 行、%2 列のグリッド"

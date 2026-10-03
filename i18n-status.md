@@ -1,0 +1,224 @@
+# Hodgepodge Application Launcher
+
+## PACKAGE
+
+**ID**: thege.hodgepodge.launcher
+
+**Date**: 2026-10-03 18:33:02
+
+**Internationalisation template file name**: template.pot
+
+**Internationalisation template translatable string count**: 82
+
+## TRANSLATION STATUS
+
+| Locale | ¹Translatable | Translated | ²Translated Ratio |
+| :---   |          ---: |       ---: |              ---: |
+| ja     | ✅         82 |         82 | ✅        100.00% |
+| nl     | ✅         82 |         82 | ✅        100.00% |
+| ro     | ✅         82 |         82 | ✅        100.00% |
+
+*¹ The language file translatable string count is checked to be the same as in the template.*
+
+*² The language file translated string ratio is checked to be 100%.*
+
+## TRANSLATION MISMATCHES
+
+*For now, only checks for the same punctuation character at the end.*
+
+```
+# /src/translate/ja.po:38
+msgid  "Sidebar position:"
+msgstr "サイドバーの位置："
+
+```
+
+```
+# /src/translate/ja.po:53
+msgid  "List style:"
+msgstr "リストスタイル："
+
+```
+
+```
+# /src/translate/ja.po:75
+msgid  "Normal: two rows, compact: one row."
+msgstr "通常：2行、コンパクト：1行"
+
+```
+
+```
+# /src/translate/ja.po:80
+msgid  "Launcher icon:"
+msgstr "ランチャーアイコン："
+
+```
+
+```
+# /src/translate/ja.po:92
+msgid  "Current icon is %1. Click to open menu to change the current icon or reset to the default icon."
+msgstr "現在のアイコンは %1 です。クリックしてメニューを開き、現在のアイコンを変更するか、デフォルトのアイコンにリセットします"
+
+```
+
+```
+# /src/translate/ja.po:98
+msgid  "Icon name is \"%1\""
+msgstr "アイコン名は「%1」です"
+
+```
+
+```
+# /src/translate/ja.po:128
+msgid  "Launcher icon text:"
+msgstr "ランチャーアイコンのテキスト："
+
+```
+
+```
+# /src/translate/ja.po:146
+msgid  "An icon text cannot be set when the launcher's container is vertical."
+msgstr "ランチャーのコンテナが垂直の場合、アイコンテキストは設定できません"
+
+```
+
+```
+# /src/translate/ja.po:151
+msgid  "User avatar size:"
+msgstr "ユーザーアバターのサイズ："
+
+```
+
+```
+# /src/translate/ja.po:164
+msgid  "Grid icons size:"
+msgstr "グリッドアイコンのサイズ："
+
+```
+
+```
+# /src/translate/ja.po:169
+msgid  "List icons size:"
+msgstr "リストアイコンのサイズ："
+
+```
+
+```
+# /src/translate/ja.po:175
+msgid  "The size of the user avatar located in the launcher header."
+msgstr "ランチャーのヘッダーにあるユーザーアバターのサイズ"
+
+```
+
+```
+# /src/translate/ja.po:180
+msgid  "Favorites layout:"
+msgstr "お気に入りのレイアウト："
+
+```
+
+```
+# /src/translate/ja.po:197
+msgid  "Applications layout:"
+msgstr "アプリケーションのレイアウト："
+
+```
+
+```
+# /src/translate/ja.po:202
+msgid  "Show comments below icons in:"
+msgstr "アイコンの下にコメントを表示："
+
+```
+
+```
+# /src/translate/ja.po:230
+msgid  "Comments are shown only in layouts set to Grid."
+msgstr "コメントは、レイアウトがグリッドの場合のみ表示されます"
+
+```
+
+```
+# /src/translate/ja.po:235
+msgid  "Separator lines:"
+msgstr "区切り線："
+
+```
+
+```
+# /src/translate/ja.po:240
+msgid  "Width:"
+msgstr "幅："
+
+```
+
+```
+# /src/translate/ja.po:245
+msgid  "Color:"
+msgstr "色："
+
+```
+
+```
+# /src/translate/ja.po:271
+msgid  "If unchecked, the apps in the main panel will be updated when clicking (instead of hovering) on a sidebar category."
+msgstr "チェックを外すと、メインパネルのアプリは、サイドバーのカテゴリにカーソルを合わせたときではなく、クリックしたときに更新されます"
+
+```
+
+```
+# /src/translate/ja.po:282
+msgid  "Open launcher in:"
+msgstr "ランチャーの初期表示："
+
+```
+
+```
+# /src/translate/ja.po:299
+msgid  "Select what is first visible when the launcher is opened."
+msgstr "ランチャーを開いたときに最初に表示するものを選択します"
+
+```
+
+```
+# /src/translate/ja.po:304
+msgid  "Show applications as:"
+msgstr "アプリケーションの表示形式："
+
+```
+
+```
+# /src/translate/ja.po:329
+msgid  "Show buttons for:"
+msgstr "表示するボタン："
+
+```
+
+```
+# /src/translate/ja.po:345
+msgid  "If unchecked or not enough space, buttons will move to the 'Power/Session' menu."
+msgstr "チェックを外すか、スペースが足りない場合、ボタンは「電源/セッション」メニューに移動します"
+
+```
+
+```
+# /src/translate/ja.po:360
+msgid  "Clicking 'OK' will reset the launcher settings."
+msgstr "「OK」をクリックすると、ランチャーの設定がリセットされます"
+
+```
+
+```
+# /src/translate/ja.po:370
+msgid  "This shortcut will activate the applet as though it had been clicked."
+msgstr "このショートカットは、クリックしたときと同じようにアプレットを起動します"
+
+```
+
+```
+# /src/translate/nl.po:98
+msgid  "Icon name is \"%1\""
+msgstr "De pictogramnaam is ‘%1’"
+
+```
+

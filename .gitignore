@@ -1,0 +1,13 @@
+*.tmp
+
+node_modules
+
+tmp/*
+
+# Package made by bin/plasmoid-generate
+/thege.hodgepodge.launcher-*.plasmoid
+
+# Backup files
+*~
+*.bak
+*.zip

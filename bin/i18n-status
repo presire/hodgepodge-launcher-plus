@@ -1,0 +1,178 @@
+#!/bin/bash
+
+
+set -eEu
+. "$( dirname "$0" )/.plasmoid"
+
+
+main()
+{
+    local translatableCount potFile output="${1:-}"
+    local -A data=() totalMissing=()
+    store-metadata-in 'data'
+
+    translatableCount="$(grep -Pzo 'msgstr ""\n(\n|$)' "${data['potFile']}" | grep -c 'msgstr ""')"
+    potFile="$( basename "${data['potFile']}" )"
+
+    local -A th=(
+        ['locale']='Locale'         # locale
+        ['total']='¹Translatable'    # translatableCount
+        ['count']='Translated'      # translatedCount
+        ['ratio']='²Translated Ratio'    # translatedRatio
+    )
+    local -a len=(
+        ${#th['locale']} # locale
+        ${#th['total']}  # translatableCount
+        ${#th['count']}  # translatedCount
+        ${#th['ratio']}  # translatedRatio
+    )
+    local -a align=(
+        ':---'  # locale
+        '---:'  # translatableCount
+        '---:'  # translatedCount
+        '---:'  # translatedRatio
+    )
+    local -a locales=() totals=() counts=() ratios=() totalStates=() doneStates=()
+    local i=0 tips devRoot poPaths poPath
+    devRoot="$( realpath "$( dirname "$0" )/.." )" || panic 0 'Development root not found.' $LINENO
+    poPaths="$( find "${data['poPath']}" -name '*.po' | sort )"
+    for poPath in $poPaths; do
+        local poFile locale translatablePoCount missing missingCount row text
+        poFile="$( basename "$poPath" )"
+        locale="$( basename "$poPath" '.po' )"
+        translatablePoCount="$( grep -Ec '^msgid ".+"' "$poPath" )"
+
+        # HACK pcregrep returns exit code 1 if no match found. The ` || missing=''` part mitigates that.
+        missing="$( pcregrep -Mno1 '^msgid "(.+?)".*?\nmsgstr ""' "$poPath" )" || missing=''
+        if [ -z "$missing" ]; then
+            missingCount=0
+        else
+            missingCount="${missing//[^$'\n']/}"
+            missingCount=$(( ${#missingCount} + 1 ))
+            totalMissing["$poFile:${missing%%:*}"]="${missing#*.}"
+        fi
+        translatedCount=$(( translatableCount - missingCount ))
+        translatedRatio="$( LC_NUMERIC='C' printf '%5.2f%%' "$( bc <<< "scale=4; 100 * $translatedCount / $translatableCount" )" )"
+
+        locales["$i"]="$locale"
+        totals["$i"]="$translatableCount"
+        counts["$i"]="$translatedCount"
+        ratios["$i"]="$translatedRatio"
+        (( translatableCount == translatablePoCount )) && totalStates["$i"]='✅' || totalStates["$i"]='⚠️'
+        (( missingCount > 0 )) && doneStates["$i"]='🚧' || doneStates["$i"]='✅'
+
+        while IFS= read -r row; do
+            if [[ $row =~ ^([0-9]+):msgid(.+)$ ]]; then
+                tips+="$poPath:$(( BASH_REMATCH[1] + 1 ))\nmsgid ${BASH_REMATCH[2]}\n"
+            else
+                tips+="$row\n\n"
+            fi
+        done < <( pcregrep -Mno 'msgid "(.+?)([[:punct:]])"\s*\nmsgstr "(?!.*\2"$).*"' "$poPath" || true )
+
+        (( ${#locale}            > len[0] )) && len[0]=${#locale}
+        (( ${#translatableCount} > len[1] )) && len[1]=${#translatableCount}
+        (( ${#translatedCount}   > len[2] )) && len[2]=${#translatedCount}
+        (( ${#translatedRatio}   > len[3] )) && len[3]=${#translatedRatio}
+
+        (( ++i ))
+    done
+
+    local headFormat dataFormat statusHeader statusBody
+    
+    headFormat="| %-${len[0]}s | %${len[1]}s | %${len[2]}s | %${len[3]}s |"
+    dataFormat="| %-${len[0]}s | %2s %$(( len[1] - 3 ))s | %${len[2]}s | %2s %$(( len[3] - 3 ))s |"
+
+    # shellcheck disable=2059
+    statusHeader="$( printf "$headFormat" "${th['locale']}" "${th['total']}" "${th['count']}" "${th['ratio']}" )"
+    for i in "${!locales[@]}"; do
+        # shellcheck disable=2059
+        statusBody+="$( printf "$dataFormat" "${locales["$i"]}" "${totalStates["$i"]}" "${totals["$i"]}" "${counts["$i"]}" "${doneStates["$i"]}" "${ratios["$i"]}" )\n"
+    done
+
+    local h1Status='TRANSLATION STATUS' h1Alerts='TRANSLATION MISMATCHES' h1Missing='NOT TRANSLATED YET'
+    case "$output" in
+        '--md') # GitHub Markdown
+            local file report status
+            file="$devRoot/i18n-status.md"
+
+            report+="# ${data['name']}\n"
+            report+="\n## PACKAGE\n"
+            report+="\n**ID**: ${data['id']}\n"
+            report+="\n**Date**: $( date +'%Y-%m-%d %H:%M:%S' )\n"
+            report+="\n**Internationalisation template file name**: $potFile\n"
+            report+="\n**Internationalisation template translatable string count**: $translatableCount\n"
+
+            report+="\n## $h1Status\n"
+            status+="\n$statusHeader\n"
+            # shellcheck disable=2059
+            status+="$( printf "$headFormat\n" "${align[0]}" "${align[1]}" "${align[2]}" "${align[3]}" )\n"
+            status+="$statusBody\n"
+            status+="*¹ The language file translatable string count is checked to be the same as in the template.*\n\n"
+            status+="*² The language file translated string ratio is checked to be 100%.*\n"
+            report+="$status"
+
+            if [ "${#totalMissing[@]}" -gt 0 ]; then
+                report+="## $h1Missing\n"
+                report+='| File:Line                 | String |'
+                report+='| ------------------------- | ------ |'
+                local prefix
+                prefix="${poPath//$devRoot}"
+                for lang in "${!totalMissing[@]}"; do
+                    # shellcheck disable=2001
+                    report+="$( echo "${totalMissing["$lang"]}" | sed "s|^\([0-9]*\):\(.*\)|\| \`$prefix:\1\` \| \"\2\"\||" )"
+                done
+                echo
+            fi
+
+            tips="${tips//$devRoot/\`\`\`$'\n\n'\`\`\`$'\n'# }\`\`\`"
+            [ -n "$tips" ] && report+="\n## $h1Alerts\n\n*For now, only checks for the same punctuation character at the end.*\n${tips:4}\n"
+
+            echo "${report//\\n/$'\n'}" > "$file"
+
+            status+="\nSee more details at [i18n-status.md](i18n-status.md).\n"
+            status="${status//\\n/$'\n'}"
+            status="${status//\\/\\\\}"       # Escape backslashes
+            status="${status//&/\\&}"         # Escape ampersands
+            status="${status//\//\\/}"        # Escape forward slashes
+            status="${status//$'\n'/\\$'\n'}" # Convert newlines to sed's line continuation format
+
+            # Replace content between delimiters
+            sed -i '/## TRANSLATION STATUS/,/## HOW TO TRANSLATE/{
+                /## TRANSLATION STATUS/!{
+                    /## HOW TO TRANSLATE/!d
+                }
+                /## TRANSLATION STATUS/a\
+            '"\n$status"'
+            }' README.md
+
+            ;;
+        *) # Bash shell
+            echo "PACKAGE NAME      ${data['name']}"
+            echo "PACKAGE ID        ${data['id']}"
+            echo "DATE              $( date +'%Y-%m-%d %H:%M:%S' )"
+            echo "I18N TEMPLATE     $potFile"
+            echo "I18N STRING COUNT $translatableCount"
+
+            echo -e "\n\n$h1Status\n"
+            echo -e "$statusHeader"
+            local separator
+            # shellcheck disable=2059
+            separator="$( printf "$headFormat\n" ' ' ' ' ' ' ' ' )"
+            echo -e "${separator// /-}"
+            echo -e "$statusBody"
+
+            if [ "${#totalMissing[@]}" -gt 0 ]; then
+                echo -e "\n$h1Missing [file:line  string]\n"
+                for lang in "${!totalMissing[@]}"; do
+                    # shellcheck disable=2001
+                    echo "${totalMissing["$lang"]}" | sed "s|^\([0-9]*\):\(.*\)|$poPath:\1  \"\2\"|"
+                done
+                echo
+            fi
+
+            [ -n "$tips" ] && echo -e "\n$h1Alerts:\n\n$tips"
+            ;;
+    esac
+}
+
+main "$@"

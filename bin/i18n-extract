@@ -1,0 +1,93 @@
+#!/bin/bash
+# Version: 23
+# https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems
+# https://techbase.kde.org/Development/Tutorials/Localization/i18n_Build_Systems/Outside_KDE_repositories
+# https://invent.kde.org/sysadmin/l10n-scripty/-/blob/master/extract-messages.sh
+#
+# `./bin/i18n-extract` to build the i18n template (template.pot)
+# `./bin/i18n-compile` to compile the i18n catalog (i.e. ro.po, de.po, etc.)
+
+
+set -eEu
+. "$( dirname "$0" )/.plasmoid"
+
+
+update-pot()
+{
+    local newPot="$1" oldPot="$2" newPotName oldPotName nowDate oldDate changes
+    oldPotName="$( basename "$oldPot" )"
+
+    if [ -f "$workPot" ]; then
+        nowDate="$( grep "POT-Creation-Date:" "$newPot" | sed 's/.\{3\}$//' )"
+        oldDate="$( grep "POT-Creation-Date:" "$oldPot" | sed 's/.\{3\}$//' )"
+
+        sed -i 's/'"$nowDate"'/'"$oldDate"'/' "$newPot"
+
+        # HACK diff returns exit code 1 when finds any difference. The ` || true` part mitigates that.
+        changes="$( diff "$oldPot" "$newPot" )" || true
+        if [ -n "$changes" ]; then
+            sed -i 's/'"$oldDate"'/'"$nowDate"'/' "$newPot"
+            mv "$newPot" "$oldPot"
+            addedKeys="$( echo "$changes" | grep "> msgid" | cut -c 9- | sort )"
+            removedKeys="$( echo "$changes" | grep "< msgid" | cut -c 9- | sort )"
+            if [ -n "$addedKeys" ]; then
+                confirm 1 "Translation strings newly added to code:" $LINENO
+                hint 2 "$addedKeys"
+            fi
+            if [ -n "$removedKeys" ]; then
+                warn 1 "Translation strings removed from code:" $LINENO
+                hint 2 "$removedKeys"
+                warn 1 "Check at the end of .po files for obsolete strings." $LINENO
+            fi
+        else
+            rm "$newPot"
+            hint 1 "No changes in '$oldPotName'. Removed temporary file." $LINENO
+        fi
+    else
+        # template.pot didn't already exist
+        mv "$newPot" "$oldPot"
+        hint 1 "No '$oldPotName', renamed temporary file to '$oldPotName'." $LINENO
+    fi
+}
+
+main()
+{
+    check-gettext-command 'xgettext'
+
+    local workPot tmpPot
+    local -A podata=()
+    store-metadata-in 'podata'
+    poPath="${podata['poPath']}"
+    workPot="${podata['potFile']}"
+    tmpPot="$( mktemp )"
+
+    hint 0 "Extracting translation strings..." $LINENO
+    extract-strings-into "$tmpPot" 'podata'
+    update-i18n-metadata "$tmpPot" 'podata'
+    update-pot "$tmpPot" "$workPot"
+    confirm 0 "...done extracting translation strings." $LINENO
+
+    hint 0 "Merging translation strings..." $LINENO
+    mkdir -p "$poPath"
+    cd "$poPath" || panic 0 "Could not enter '${podata['poPath']}'" $LINENO
+    for poFile in $( find . -name '*.po' | sort ); do
+        local locale tmpPoFile="$poFile.tmp"
+        locale="$( basename "${poFile%.*}" )"
+
+        cp "$poFile" "$tmpPoFile"
+        msgmerge \
+           --add-location=full \
+           --no-fuzzy-matching \
+           --no-wrap \
+           --quiet \
+           --output-file="$tmpPoFile" \
+           "$poFile" "$workPot"
+        update-i18n-metadata "$tmpPoFile" 'podata' "$locale"
+        mv "$tmpPoFile" "$poFile"
+
+        hint 1 "Updated $( basename "$poFile" )." $LINENO
+    done
+    confirm 0 "...done merging translation strings." $LINENO
+}
+
+main
