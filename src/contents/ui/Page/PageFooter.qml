@@ -8,7 +8,6 @@
 pragma ComponentBehavior: Bound
 
 import QtQuick
-import org.kde.ksvg as KSvg
 import org.kde.plasma.components as PComponents
 import org.kde.plasma.extras as PExtras
 import org.kde.kirigami as Kirigami
@@ -43,6 +42,13 @@ PExtras.PlasmoidHeading {
 
     position: PComponents.ToolBar.Footer
     enabledBorders: Qt.BottomEdge | Qt.LeftEdge | Qt.RightEdge // disable top border
+
+    // Transparent footer; the padding alone separates it from the content
+    Binding {
+        target: root.background
+        property: "opacity"
+        value: 0
+    }
 
     FontMetrics {
         id: fontMetrics
@@ -80,15 +86,16 @@ PExtras.PlasmoidHeading {
             flickableDirection: Flickable.AutoFlickIfNeeded
             snapMode: ListView.SnapToItem
 
-            highlight: KSvg.FrameSvgItem {
+            // Pill-shaped selection instead of the theme's tab SVG
+            highlight: Rectangle {
                 anchors {
                     top: tabBarListView.contentItem.top
                     bottom: tabBarListView.contentItem.bottom
-                    topMargin: -root.topPadding
-                    bottomMargin: -root.bottomPadding
                 }
-                imagePath: "widgets/tabbar"
-                prefix: tabBar.position === PComponents.TabBar.Header ? "north-active-tab" : "south-active-tab"
+                radius: height / 2
+                color: Qt.alpha(Kirigami.Theme.highlightColor, 0.2)
+                border.width: 1
+                border.color: Qt.alpha(Kirigami.Theme.highlightColor, 0.35)
             }
             highlightMoveDuration: Kirigami.Units.longDuration
             highlightRangeMode: ListView.ApplyRange

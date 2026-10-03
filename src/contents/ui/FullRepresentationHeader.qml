@@ -35,6 +35,15 @@ PExtras.PlasmoidHeading {
         + kickoff.backgroundMetrics.bottomPadding
     enabledBorders: Qt.TopEdge | Qt.LeftEdge | Qt.RightEdge // disable bottom border
 
+    // Transparent header; the padding alone separates it from the content
+    // Use the window colors, since the header background is no longer drawn
+    Kirigami.Theme.colorSet: Kirigami.Theme.Window
+    Binding {
+        target: root.background
+        property: "opacity"
+        value: 0
+    }
+
     KPCoreAddons.KUser {
         id: kuser
     }

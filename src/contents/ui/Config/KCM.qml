@@ -104,7 +104,7 @@ KCMU.SimpleKCM {
         cfg_favoritesLayout = 0
         cfg_appsLayout = 1
         cfg_separatorLineWidth = '1'
-        cfg_separatorLineColor = '#15ffffff'
+        cfg_separatorLineColor = ''
 
         cfg_isAppletPinned = false
         cfg_favoritesPortedToKAstats = false

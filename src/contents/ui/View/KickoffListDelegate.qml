@@ -76,6 +76,7 @@ AbstractKickoffItemDelegate {
                 wrapMode: root.isMultilineText ? Text.WordWrap : Text.NoWrap
                 verticalAlignment: Text.AlignVCenter
                 maximumLineCount: root.isMultilineText ? Infinity : 1
+                font.weight: Font.Medium
                 color: gridLayout.textColor
             }
 
@@ -113,7 +114,7 @@ AbstractKickoffItemDelegate {
         // Sidebar separator line above applications categories
         sourceComponent: Rectangle {
             id: separator
-            color: Plasmoid.configuration.separatorLineColor
+            color: kickoff.separatorLineColor
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter

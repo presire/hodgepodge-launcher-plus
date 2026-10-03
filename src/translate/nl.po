@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: thege.hodgepodge.launcher\n"
 "Report-Msgid-Bugs-To: https://github.com/presire/hodgepodge-launcher-plus/issues\n"
-"POT-Creation-Date: 2026-10-03 19:04+0900\n"
+"POT-Creation-Date: 2026-10-03 20:06+0900\n"
 "PO-Revision-Date: 2026-10-03 19:20+0900\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: none\n"
@@ -32,243 +32,248 @@ msgstr "Vormgeving"
 msgid "Report a Bug…"
 msgstr "Bug melden…"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:48
+#: ../src/contents/ui/Config/KCMAppearance.qml:49
 #, kde-format
 msgid "Sidebar position:"
 msgstr "Zijbalklocatie:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:51
+#: ../src/contents/ui/Config/KCMAppearance.qml:52
 #, kde-format
 msgid "Left"
 msgstr "Links"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:56
+#: ../src/contents/ui/Config/KCMAppearance.qml:57
 #, kde-format
 msgid "Right"
 msgstr "Rechts"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:63
+#: ../src/contents/ui/Config/KCMAppearance.qml:64
 #, kde-format
 msgid "List style:"
 msgstr "Lijststijl:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:66
+#: ../src/contents/ui/Config/KCMAppearance.qml:67
 #, kde-format
 msgid "Normal"
 msgstr "Normaal"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:73
+#: ../src/contents/ui/Config/KCMAppearance.qml:74
 #, kde-format
 msgid "Compact"
 msgstr "Compact"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:79
+#: ../src/contents/ui/Config/KCMAppearance.qml:80
 #, kde-format
 msgctxt "@info:usagetip under a checkbox when Touch Mode is on"
 msgid "Disabled in Touch Mode"
 msgstr "Uitgeschakeld in aanraakmodus"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:85
+#: ../src/contents/ui/Config/KCMAppearance.qml:86
 #, kde-format
 msgctxt "@info:isListCompact"
 msgid "Normal: two rows, compact: one row."
 msgstr "Normaal: twee rijen — Compact: één rij."
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:93
+#: ../src/contents/ui/Config/KCMAppearance.qml:94
 #, kde-format
 msgid "Launcher icon:"
 msgstr "Starterpictogram:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:98
+#: ../src/contents/ui/Config/KCMAppearance.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Change Application Launcher's icon"
 msgstr "Kies een ander starterpictogram"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:99
+#: ../src/contents/ui/Config/KCMAppearance.qml:100
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Current icon is %1. Click to open menu to change the current icon or reset to the default icon."
 msgstr "Het huidige pictogram is %1. Klik om een ander pictogram te kiezen of het standaardpictogram terug te zetten."
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:102
+#: ../src/contents/ui/Config/KCMAppearance.qml:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Icon name is \"%1\""
 msgstr "De pictogramnaam is ‘%1’"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:135
+#: ../src/contents/ui/Config/KCMAppearance.qml:136
 #, kde-format
 msgctxt "@item:inmenu Open icon chooser dialog"
 msgid "Choose…"
 msgstr "Kiezen…"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:137
+#: ../src/contents/ui/Config/KCMAppearance.qml:138
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Choose an icon for Application Launcher"
 msgstr "Kies een starterpictogram"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:141
+#: ../src/contents/ui/Config/KCMAppearance.qml:142
 #, kde-format
 msgctxt "@item:inmenu Reset icon to default"
 msgid "Reset to default icon"
 msgstr "Standaardpictogram terugzetten"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:147
+#: ../src/contents/ui/Config/KCMAppearance.qml:148
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Remove icon"
 msgstr "Pictogram verwijderen"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:160
+#: ../src/contents/ui/Config/KCMAppearance.qml:161
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Launcher icon text:"
 msgstr "Tekst naast pictogram:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:162
+#: ../src/contents/ui/Config/KCMAppearance.qml:163
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Type here to add a text label next to the launcher icon…"
 msgstr "Voer een tekst in die naast het starterpictogram moet worden getoond…"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:175
+#: ../src/contents/ui/Config/KCMAppearance.qml:176
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove launcher icon text"
 msgstr "Tekst wissen"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:188
+#: ../src/contents/ui/Config/KCMAppearance.qml:189
 #, kde-format
 msgctxt "@info"
 msgid "An icon text cannot be set when the launcher's container is vertical."
 msgstr "Let op: en kan geen tekst worden ingesteld als de starter op een verticaal paneel staat."
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:198
+#: ../src/contents/ui/Config/KCMAppearance.qml:199
 #, kde-format
 msgid "User avatar size:"
 msgstr "Grootte van profielfoto:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:204
-#: ../src/contents/ui/Config/KCMAppearance.qml:215
-#: ../src/contents/ui/Config/KCMAppearance.qml:226
-#: ../src/contents/ui/Config/KCMAppearance.qml:319
+#: ../src/contents/ui/Config/KCMAppearance.qml:205
+#: ../src/contents/ui/Config/KCMAppearance.qml:216
+#: ../src/contents/ui/Config/KCMAppearance.qml:227
+#: ../src/contents/ui/Config/KCMAppearance.qml:320
 #, kde-format
 msgid "px"
 msgstr "px"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:209
+#: ../src/contents/ui/Config/KCMAppearance.qml:210
 #, kde-format
 msgid "Grid icons size:"
 msgstr "Grootte van pictogrammen op rooster:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:220
+#: ../src/contents/ui/Config/KCMAppearance.qml:221
 #, kde-format
 msgid "List icons size:"
 msgstr "Grootte van pictogrammen op lijst:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:231
+#: ../src/contents/ui/Config/KCMAppearance.qml:232
 #, kde-format
 msgctxt "@info:userIconSize"
 msgid "The size of the user avatar located in the launcher header."
 msgstr "De grootte van de profielfoto die bovenaan de starter getoond wordt."
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:239
+#: ../src/contents/ui/Config/KCMAppearance.qml:240
 #, kde-format
 msgid "Favorites layout:"
 msgstr "Indeling van favorieten:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:242
-#: ../src/contents/ui/Config/KCMAppearance.qml:258
+#: ../src/contents/ui/Config/KCMAppearance.qml:243
+#: ../src/contents/ui/Config/KCMAppearance.qml:259
 #, kde-format
 msgid "Grid"
 msgstr "Rooster"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:248
-#: ../src/contents/ui/Config/KCMAppearance.qml:264
+#: ../src/contents/ui/Config/KCMAppearance.qml:249
+#: ../src/contents/ui/Config/KCMAppearance.qml:265
 #, kde-format
 msgid "List"
 msgstr "Lijst"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:255
+#: ../src/contents/ui/Config/KCMAppearance.qml:256
 #, kde-format
 msgid "Applications layout:"
 msgstr "Programma-indeling:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:271
+#: ../src/contents/ui/Config/KCMAppearance.qml:272
 #, kde-format
 msgid "Show comments below icons in:"
 msgstr "Opmerkingen onder pictogrammen tonen bij:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:275
+#: ../src/contents/ui/Config/KCMAppearance.qml:276
 #, kde-format
 msgid "None"
 msgstr "Geen"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:276
+#: ../src/contents/ui/Config/KCMAppearance.qml:277
 #: ../src/contents/ui/Config/KCMBehavior.qml:87
 #, kde-format
 msgid "Favorites"
 msgstr "Favorieten"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:277
-#: ../src/contents/ui/Page/PageFooter.qml:118
+#: ../src/contents/ui/Config/KCMAppearance.qml:278
+#: ../src/contents/ui/Page/PageFooter.qml:125
 #, kde-format
 msgid "Applications"
 msgstr "Programma's"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:278
+#: ../src/contents/ui/Config/KCMAppearance.qml:279
 #, kde-format
 msgid "Favorites and applications"
 msgstr "Favorieten en programma's"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:283
+#: ../src/contents/ui/Config/KCMAppearance.qml:284
 #, kde-format
 msgctxt "@info:gridCommentVisibility"
 msgid "Comments are shown only in layouts set to Grid."
 msgstr "Opmerkingen worden alleen getoond bij indelingen die op ‘Rooster’ zijn ingesteld."
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:287
+#: ../src/contents/ui/Config/KCMAppearance.qml:288
 #, kde-format
 msgid "Comment lines:"
 msgstr "Regels voor opmerkingen:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:291
+#: ../src/contents/ui/Config/KCMAppearance.qml:292
 #, kde-format
 msgid "One line"
 msgstr "Eén regel"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:292
+#: ../src/contents/ui/Config/KCMAppearance.qml:293
 #, kde-format
 msgid "Two lines"
 msgstr "Twee regels"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:297
+#: ../src/contents/ui/Config/KCMAppearance.qml:298
 #, kde-format
 msgctxt "@info:gridCommentLines"
 msgid "Grid cells are square, so two lines also make them wider and fewer icons fit in a row."
 msgstr "Roostercellen zijn vierkant, dus twee regels maken ze ook breder en er passen minder pictogrammen in een rij."
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:305
+#: ../src/contents/ui/Config/KCMAppearance.qml:306
 #, kde-format
 msgid "Separator lines:"
 msgstr "Scheidingslijnen:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:309
+#: ../src/contents/ui/Config/KCMAppearance.qml:310
 #, kde-format
 msgid "Width:"
 msgstr "Breedte:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:324
+#: ../src/contents/ui/Config/KCMAppearance.qml:325
 #, kde-format
 msgid "Color:"
 msgstr "Kleur:"
 
-#: ../src/contents/ui/Config/KCMAppearance.qml:328
+#: ../src/contents/ui/Config/KCMAppearance.qml:329
 #, kde-format
 msgid "Separator lines color"
 msgstr "Kleur van scheidingslijnen"
+
+#: ../src/contents/ui/Config/KCMAppearance.qml:336
+#, kde-format
+msgid "Use theme color"
+msgstr "Themakleur gebruiken"
 
 #: ../src/contents/ui/Config/KCMBehavior.qml:46
 #, kde-format
@@ -308,7 +313,7 @@ msgid "All Applications"
 msgstr "Alle programma's"
 
 #: ../src/contents/ui/Config/KCMBehavior.qml:91
-#: ../src/contents/ui/Page/PageFooter.qml:125
+#: ../src/contents/ui/Page/PageFooter.qml:132
 #, kde-format
 msgid "Places"
 msgstr "Locaties"
@@ -390,12 +395,12 @@ msgstr "Sneltoetsen"
 msgid "This shortcut will activate the applet as though it had been clicked."
 msgstr "Met behulp van deze sneltoets kan de starter worden geopend."
 
-#: ../src/contents/ui/FullRepresentationHeader.qml:86
+#: ../src/contents/ui/FullRepresentationHeader.qml:95
 #, kde-format
 msgid "Open user settings"
 msgstr "Gebruikersinstellingen openen"
 
-#: ../src/contents/ui/FullRepresentationHeader.qml:275
+#: ../src/contents/ui/FullRepresentationHeader.qml:284
 #, kde-format
 msgid "Keep Open"
 msgstr "Openhouden"
@@ -431,7 +436,7 @@ msgstr "Op huidige activiteit"
 msgid "Show in Favorites"
 msgstr "Tonen in favorieten"
 
-#: ../src/contents/ui/main.qml:381
+#: ../src/contents/ui/main.qml:386
 #, kde-format
 msgid "Edit Applications…"
 msgstr "Programma's bewerken…"
@@ -456,25 +461,25 @@ msgstr "Energie"
 msgid "More"
 msgstr "Meer"
 
-#: ../src/contents/ui/Page/PlacesPage.qml:68
+#: ../src/contents/ui/Page/PlacesPage.qml:67
 #, kde-format
 msgctxt "category in Places sidebar"
 msgid "Computer"
 msgstr "Computer"
 
-#: ../src/contents/ui/Page/PlacesPage.qml:69
+#: ../src/contents/ui/Page/PlacesPage.qml:68
 #, kde-format
 msgctxt "category in Places sidebar"
 msgid "History"
 msgstr "Geschiedenis"
 
-#: ../src/contents/ui/Page/PlacesPage.qml:70
+#: ../src/contents/ui/Page/PlacesPage.qml:69
 #, kde-format
 msgctxt "category in Places sidebar"
 msgid "Frequently Used"
 msgstr "Veelgebruikt"
 
-#: ../src/contents/ui/View/KickoffGridView.qml:100
+#: ../src/contents/ui/View/KickoffGridView.qml:99
 #, kde-format
 msgid "Grid with %1 rows, %2 columns"
 msgstr "Een rooster met %1 rijen en %2 kolommen"

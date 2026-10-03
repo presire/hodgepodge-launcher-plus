@@ -17,7 +17,6 @@ import QtQuick.Templates as T
 
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.components as PComponents
-import org.kde.plasma.extras as PExtras
 import org.kde.plasma.plasmoid
 
 import "../Helper"
@@ -113,6 +112,9 @@ EmptyPage {
 
                 // we override the Primary type's font weight (DemiBold) for Bold for contrast with small text
                 font.weight: Font.Bold
+                // smaller and widely spaced, like a modern caption
+                font.pointSize: Kirigami.Theme.smallFont.pointSize
+                font.letterSpacing: 1
 
                 Accessible.ignored: true
             }
@@ -122,7 +124,7 @@ EmptyPage {
                 QQL.Layout.fillWidth: true
                 QQL.Layout.alignment: Qt.AlignVCenter
                 QQL.Layout.preferredHeight: Plasmoid.configuration.separatorLineWidth
-                color: Plasmoid.configuration.separatorLineColor
+                color: kickoff.separatorLineColor
             }
         }
     }
@@ -175,7 +177,7 @@ EmptyPage {
         // This is actually needed. The highlight will animate from thin to wide otherwise.
         highlightResizeDuration: 0
         highlightMoveDuration: 0
-        highlight: PExtras.Highlight {
+        highlight: ModernHighlight {
             // The default Z value for delegates is 1. The default Z value for the section delegate is 2.
             // The highlight gets a value of 3 while the drag is active and then goes back to the default value of 0.
             z: (root.currentItem?.Drag.active ?? false) ? 3 : 0

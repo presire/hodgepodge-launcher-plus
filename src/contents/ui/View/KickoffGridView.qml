@@ -13,7 +13,6 @@ import QtQuick
 import QtQuick.Templates as T
 
 import org.kde.plasma.components as KComponents
-import org.kde.plasma.extras as PExtras
 import org.kde.kirigami as Kirigami
 
 import "../Helper"
@@ -120,7 +119,7 @@ EmptyPage {
         keyNavigationWraps: false
 
         highlightMoveDuration: 0
-        highlight: PExtras.Highlight {
+        highlight: ModernHighlight {
             // The default Z value for delegates is 1. The default Z value for the section delegate is 2.
             // The highlight gets a value of 3 while the drag is active and then goes back to the default value of 0.
             z: (root.currentItem?.Drag.active ?? false) ? 3 : 0
@@ -131,6 +130,7 @@ EmptyPage {
 
             width: view.cellWidth
             height: view.cellHeight
+            inset: Kirigami.Units.smallSpacing / 2 // gap between cards
         }
 
         delegate: KickoffGridDelegate {

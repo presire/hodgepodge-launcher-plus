@@ -9,8 +9,8 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import QtQuick.Templates as T
+import org.kde.kirigami as Kirigami
 
-import org.kde.plasma.extras as PExtras
 
 import "../Helper"
 
@@ -39,9 +39,10 @@ KickoffGridView {
     view.cellWidth: view.iconSize + Global.gridCellSpacing + (root.isCommentVisible ? kickoff.gridCommentHeight : 0)
     view.implicitHeight: view.contentHeight
     blockTargetWheel: false
-    view.highlight: PExtras.Highlight {
+    view.highlight: ModernHighlight {
         visible: root.isCurrentSectionGrid
         pressed: (root.view.currentItem as T.AbstractButton)?.down ?? false
+        inset: Kirigami.Units.smallSpacing / 2 // gap between cards
 
         // The default Z value for delegates is 1. The default Z value for the section delegate is 2.
         // The highlight gets a value of 3 while the drag is active and then goes back to the default value of 0.

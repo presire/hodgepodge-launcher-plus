@@ -87,7 +87,7 @@
             <max>10</max>
         </entry>
         <entry name="separatorLineColor" type="string">
-            <default>#15ffffff</default>
+            <default></default>
         </entry>
     </group>
 </kcfg>

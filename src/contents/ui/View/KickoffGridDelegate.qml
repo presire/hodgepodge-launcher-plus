@@ -61,6 +61,16 @@ AbstractKickoffItemDelegate {
             animated: false
             selected: root.iconAndLabelsShouldlookSelected
             source: root.decoration || root.icon.name || root.icon.source
+
+            // Enlarge slightly on hover
+            scale: root.mouseArea.containsMouse && !root.down ? 1.08 : 1
+            Behavior on scale {
+                enabled: Kirigami.Units.shortDuration > 0
+                NumberAnimation {
+                    duration: Kirigami.Units.shortDuration
+                    easing.type: Easing.OutCubic
+                }
+            }
         }
 
         PComponents.Label {
@@ -76,6 +86,7 @@ AbstractKickoffItemDelegate {
             verticalAlignment: Text.AlignTop
             maximumLineCount: 2
             wrapMode: Text.Wrap
+            font.weight: Font.Medium
             color: root.iconAndLabelsShouldlookSelected ? Kirigami.Theme.highlightedTextColor : Kirigami.Theme.textColor
         }
 

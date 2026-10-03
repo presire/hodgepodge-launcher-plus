@@ -11,7 +11,6 @@ import QtQuick
 import QtQuick.Templates as T
 
 import org.kde.kirigami as Kirigami
-import org.kde.plasma.extras as PExtras
 import org.kde.plasma.plasmoid
 import org.kde.plasma.private.kicker as Kicker
 
@@ -37,7 +36,7 @@ BasePage {
             id: listDelegate
             width: sidebar.view.availableWidth
             isCategoryListItem: true
-            background: PExtras.Highlight {
+            background: ModernHighlight {
                 // I have to do this for it to actually fill the item for some reason
                 anchors.fill: parent
                 active: false

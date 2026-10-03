@@ -85,7 +85,7 @@ FocusScope {
         anchors.bottom: parent.bottom
         LayoutMirroring.enabled: kickoff.sidebarOnRight
         implicitWidth: Plasmoid.configuration.separatorLineWidth
-        color: Plasmoid.configuration.separatorLineColor
+        color: kickoff.separatorLineColor
     }
 
     Loader {

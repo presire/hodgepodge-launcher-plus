@@ -10,7 +10,6 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Templates as T
 
-import org.kde.plasma.extras as PExtras
 import org.kde.plasma.plasmoid
 
 import "../Helper"
@@ -30,7 +29,7 @@ BasePage {
             width: view.availableWidth
             isCategoryListItem: true
             isMultilineText: false
-            background: PExtras.Highlight {
+            background: ModernHighlight {
                 // I have to do this for it to actually fill the item for some reason
                 anchors.fill: parent
                 active: false

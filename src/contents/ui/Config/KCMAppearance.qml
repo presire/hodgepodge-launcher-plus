@@ -40,7 +40,8 @@ KCM {
     property alias  cfg_gridIconSize: gridIconSize.currentIndex
     property alias  cfg_listIconSize: listIconSize.currentIndex
     property alias  cfg_separatorLineWidth: separatorLineWidth.value
-    property alias  cfg_separatorLineColor: separatorLineColor.color
+    // Empty cfg_separatorLineColor (inherited from KCM) means the theme color
+    readonly property color separatorLineEffectiveColor: cfg_separatorLineColor || Qt.alpha(Kirigami.Theme.textColor, 0.1)
 
     Kirigami.FormLayout {
 
@@ -326,9 +327,15 @@ KCM {
                     KQC.ColorButton {
                         id: separatorLineColor
                         dialogTitle: i18n("Separator lines color") // qmllint disable unqualified
-                        color: root.cfg_separatorLineColorDefault
+                        color: root.separatorLineEffectiveColor
                         showAlphaChannel: true
                         onAccepted: root.cfg_separatorLineColor = color
+                    }
+                    QQC.Button {
+                        icon.name: "edit-reset"
+                        text: i18n("Use theme color") // qmllint disable unqualified
+                        enabled: root.cfg_separatorLineColor !== ""
+                        onClicked: root.cfg_separatorLineColor = ""
                     }
                 }
             }
@@ -342,7 +349,7 @@ KCM {
                 //Layout.topMargin: blurWidth * -1
                 //Layout.bottomMargin: - parent.height * 1 - blurWidth * 2
                 Rectangle {
-                    color: root.cfg_separatorLineColor
+                    color: root.separatorLineEffectiveColor
                     implicitWidth: root.cfg_separatorLineWidth
                     implicitHeight: parent.height - 20
                     anchors.centerIn: parent

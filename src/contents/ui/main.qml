@@ -195,6 +195,11 @@ PlasmoidItem {
         isMultilineText: false
     }
 
+    // Empty separatorLineColor means a faint line derived from the theme text color
+    // (string, since QtQuick is imported as QQ and "color" is not a type here)
+    readonly property string separatorLineColor: Plasmoid.configuration.separatorLineColor
+        || String(Qt.alpha(Kirigami.Theme.textColor, 0.1))
+
     // Comments below grid icons
     // gridCommentVisibility: 0 = none, 1 = favorites, 2 = applications, 3 = both
     readonly property bool isFavoritesGridCommentVisible: Plasmoid.configuration.favoritesLayout === 0
