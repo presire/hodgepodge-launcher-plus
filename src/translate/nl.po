@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: thege.hodgepodge.launcher\n"
 "Report-Msgid-Bugs-To: https://github.com/presire/hodgepodge-launcher-plus/issues\n"
-"POT-Creation-Date: 2026-10-03 20:06+0900\n"
+"POT-Creation-Date: 2026-10-03 20:48+0900\n"
 "PO-Revision-Date: 2026-10-03 19:20+0900\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: none\n"
@@ -479,7 +479,7 @@ msgctxt "category in Places sidebar"
 msgid "Frequently Used"
 msgstr "Veelgebruikt"
 
-#: ../src/contents/ui/View/KickoffGridView.qml:99
+#: ../src/contents/ui/View/KickoffGridView.qml:109
 #, kde-format
 msgid "Grid with %1 rows, %2 columns"
 msgstr "Een rooster met %1 rijen en %2 kolommen"

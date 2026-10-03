@@ -78,8 +78,18 @@ EmptyPage {
         cellHeight: iconSize + Global.gridCellSpacing + (root.isCommentVisible ? kickoff.gridCommentHeight : 0)
         cellWidth: iconSize + Global.gridCellSpacing + (root.isCommentVisible ? kickoff.gridCommentHeight : 0)
 
-        readonly property int columns: Math.floor((implicitWidth - topMargin - bottomMargin) / cellWidth)
-        readonly property int rows: Math.floor((implicitHeight - topMargin - bottomMargin) / cellHeight)
+        // Not storing them as properties somehow avoids a dubious warning
+        // about *Binding loop detected for property "rows"*
+        function availableWidth(): real {
+            return width - leftMargin - rightMargin;
+        }
+        function availableHeight(): real {
+            return height - topMargin - bottomMargin;
+        }
+
+        // Must match the actual layout, or Left/Right are ignored at wrong positions
+        readonly property int columns: Math.max(1, Math.floor(availableWidth() / cellWidth))
+        readonly property int rows: Math.max(1, Math.floor(availableHeight() / cellHeight))
 
         // NOTE: parent is the contentItem that Control subclasses automatically
         // create when no contentItem is set, but content is added.
