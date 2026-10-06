@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify tag version matches metadata.json
+        run: |
+          # Leading zeros are allowed (e.g. v02.2.002 == 2.2.2), so compare each part numerically.
+          [[ "$GITHUB_REF_NAME" =~ ^v([0-9]+)\.([0-9]+)\.([0-9]+) ]] || { echo "::error::Invalid tag: $GITHUB_REF_NAME"; exit 1; }
+          tagVersion="$(( 10#${BASH_REMATCH[1]} )).$(( 10#${BASH_REMATCH[2]} )).$(( 10#${BASH_REMATCH[3]} ))"
+          metaVersion="$( jq -r '.KPlugin.Version' src/metadata.json )"
+          [[ "$metaVersion" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]] || { echo "::error::Invalid KPlugin.Version in src/metadata.json: $metaVersion"; exit 1; }
+          metaVersion="$(( 10#${BASH_REMATCH[1]} )).$(( 10#${BASH_REMATCH[2]} )).$(( 10#${BASH_REMATCH[3]} ))"
+          if [ "$tagVersion" != "$metaVersion" ]; then
+            echo "::error::Tag version ($tagVersion) does not match src/metadata.json KPlugin.Version ($metaVersion)"
+            exit 1
+          fi
+
+      - name: Build .plasmoid
+        run: ./bin/plasmoid-generate
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME" \
+            --generate-notes \
+            thege.hodgepodge.launcher-*.plasmoid

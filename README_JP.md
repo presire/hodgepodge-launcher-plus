@@ -35,17 +35,13 @@ English: [README.md](README.md)
 + 区切り線の色
 + ツールバーの操作ボタンを、従来の電源／セッション／電源とセッションに加えて、すべてオーバーフローメニューへ移動できる
 
-## スクリーンショット (元のバージョン)
+## スクリーンショット
 
-![Default settings (48px grid) vs my settings(64px grid)](https://github.com/user-attachments/assets/de2351db-83d2-4f83-921d-cc540fe5149e)
-
-![Default settings (32px list)](https://github.com/user-attachments/assets/e502e142-23f6-47ef-a158-93ac6c0da52f)
-
-![Grid variants: 128px vs 16px](https://github.com/user-attachments/assets/ba353256-bd98-44ca-91b1-b64f9a899515)
-
-![List variants: 1280px vs 16px](https://github.com/user-attachments/assets/862ebf2d-f8b2-4728-a8b3-7e5df32d8471)
-
-![Configuration options](https://github.com/user-attachments/assets/b0b7d127-5288-4701-af9c-708ac8bb2105)
+| グリッド表示 | リスト表示 |
+| :---: | :---: |
+| ![グリッド表示](screenshot/grid_ja.png) | ![リスト表示](screenshot/list_ja.png) |
+| **設定画面: 動作** | **設定画面: 外観** |
+| ![設定画面: 動作](screenshot/config_behavior_ja.png) | ![設定画面: 外観](screenshot/config_appearance_ja.png) |
 
 ## インストール
 
@@ -63,11 +59,13 @@ GitHub のリポジトリページ (https://github.com/presire/hodgepodge-launch
 展開したフォルダのルート (README.md がある場所) で端末を開きます。
 
 このバージョンも元のバージョンもインストールしていない場合 (plasmashell も再起動されます):
+
 ```sh
 ./bin/plasmoid-install
 ```
 
 このバージョンまたは元のバージョンをインストール済みの場合 (plasmashell も再起動されます):
+
 ```sh
 ./bin/plasmoid-upgrade
 ```

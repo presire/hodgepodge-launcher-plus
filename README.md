@@ -35,17 +35,13 @@ The following configuration options were added on top of Application Launcher (K
 + separator lines color
 + toolbar action buttons can be all moved to the overflow menu, in addition to the former power/session/power+session options
 
-## SCREENSHOTS (ORIGINAL VERSION)
+## SCREENSHOTS
 
-![Default settings (48px grid) vs my settings(64px grid)](https://github.com/user-attachments/assets/de2351db-83d2-4f83-921d-cc540fe5149e)
-
-![Default settings (32px list)](https://github.com/user-attachments/assets/e502e142-23f6-47ef-a158-93ac6c0da52f)
-
-![Grid variants: 128px vs 16px](https://github.com/user-attachments/assets/ba353256-bd98-44ca-91b1-b64f9a899515)
-
-![List variants: 1280px vs 16px](https://github.com/user-attachments/assets/862ebf2d-f8b2-4728-a8b3-7e5df32d8471)
-
-![Configuration options](https://github.com/user-attachments/assets/b0b7d127-5288-4701-af9c-708ac8bb2105)
+| Grid layout | List layout |
+| :---: | :---: |
+| ![Grid layout](screenshot/grid_en.png) | ![List layout](screenshot/list_en.png) |
+| **Configuration: Behavior** | **Configuration: Appearance** |
+| ![Configuration: Behavior](screenshot/config_behavior_en.png) | ![Configuration: Appearance](screenshot/config_appearance_en.png) |
 
 ## INSTALLATION
 
